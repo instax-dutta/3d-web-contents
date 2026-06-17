@@ -1,51 +1,48 @@
 # three-react-ui
 
-> Drop-in React components for Three.js 3D web experiences.
+> Drop-in React components for Three.js 3D web experiences — copy-paste templates with zero package maintenance debt.
 
-[![React Version](https://img.shields.io/badge/react-18%2B-blue)](https://react.dev)
-[![Three.js Version](https://img.shields.io/badge/three.js-0.128.0-black)](https://threejs.org)
-[![License](https://img.shields.io/badge/license-MIT-green)](#license)
+[![React Version](https://img.shields.io/badge/react-18%2B-blue?style=flat-square)](https://react.dev)
+[![Three.js Version](https://img.shields.io/badge/three.js-0.128.0-black?style=flat-square)](https://threejs.org)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](#-license)
 
 ---
 
 ## 🚀 One-Liner Installation
 
-Fetch components directly into your codebase on demand. Run the picker script:
+Skip dependency installation bottlenecks. Fetch components directly into your local workspace on demand:
 
 ```bash
-# Run interactive picker
+# Run interactive CLI picker
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash
 ```
 
-Or target a specific component directly:
+Or target a specific component immediately:
 
 ```bash
-# Fetch CSS3DCard immediately
+# Fetch CSS3DCard directly
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s CSS3DCard
 ```
 
 > [!TIP]
-> **AI Copilot Ready:** After downloading, the script prints a tailored prompt block. Paste it directly into **Cursor**, **Claude Code**, or any AI agent to automatically integrate the component into your page layouts!
+> **AI Copilot Integration:** Upon download completion, the script outputs a tailored prompt block. Copy and paste it directly into **Cursor**, **Claude Code**, or any AI agent to drop the component into your UI layout instantly.
 
 ---
 
-## 🛠 Manual Usage
+## 🛠 Zero-Dependency Philosophy (Risk Reversal)
 
-If you prefer to copy components manually:
+Traditional npm package libraries create dependency locks, security vulnerabilities, and build-tool collisions. `three-react-ui` reverses this risk:
 
-1. **Download:** Clone this repository or download the ZIP file.
-2. **Copy:** Transfer the directories from `src/components/` and `src/hooks/useThreeScene.js` into your project directory (e.g. into your `components/` and `hooks/` folders).
-3. **Install Peer Dependency:** Add Three.js to your project:
-   ```bash
-   npm install three@0.128.0
-   ```
+1. **You Own the Code:** The installer drops raw, unminified source code directly into your component directory.
+2. **Zero Maintenance Debt:** No package updates to track. If you want to change a behavior, edit the file directly.
+3. **Optimized and Lean:** Copy only what you use, keeping your production bundle clean and tree-shakeable.
 
 ---
 
-## 📦 Components
+## 📦 Curated 3D Component Library
 
 ### 1. CSS3DCard
-A 3D product card that explodes into 5 floating layers on hover with spring-like physics.
+A 3D product card that explodes into 5 floating layers on hover with spring-like physics and click Y-axis rotation.
 
 ```jsx
 import CSS3DCard from './components/CSS3DCard'
@@ -64,15 +61,15 @@ export default function App() {
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `title` | `string` | *Required* | Title text displayed on the card |
-| `description` | `string` | *Required* | Description paragraph printed on the card |
-| `badge` | `string` | *Required* | Text tag printed inside the neon badge overlay |
-| `accentColor` | `string` | `"#00ffff"` | Hex color string driving card outline/glow borders |
+| `title` | `string` | *Required* | Bold title printed on the text layer |
+| `description` | `string` | *Required* | Description paragraph printed on the text layer |
+| `badge` | `string` | *Required* | Accent tag printed inside the neon badge pill |
+| `accentColor` | `string` | `"#00ffff"` | Hex color string driving card outlines and glow borders |
 
 ---
 
 ### 2. GeometryRepel
-Twelve auto-rotating 3D shapes that disperse dynamically as the mouse cursor approaches.
+Twelve auto-rotating 3D shapes (Icosahedrons, Toruses, Octahedrons) that disperse dynamically in world space as the mouse cursor approaches, smoothly drifting back to their home positions when the cursor leaves.
 
 ```jsx
 import GeometryRepel from './components/GeometryRepel'
@@ -89,13 +86,13 @@ export default function App() {
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `count` | `number` | `12` | Number of floating meshes to scatter and animate |
-| `repelRadius` | `number` | `150` | Maximum distance (world units) for shape-to-mouse repel reaction |
+| `count` | `number` | `12` | Total number of floating meshes to render and animate |
+| `repelRadius` | `number` | `150` | Maximum radius (world units) for shape-to-mouse repel reaction |
 
 ---
 
 ### 3. LightingReflection
-A metallic sphere sitting over a real-time projected ground-plane mirror reflection with fake bloom halos.
+A metallic sphere sitting over a real-time projected ground-plane mirror reflection (via WebGLRenderTarget) featuring PointLight mouse tracking and fake additive bloom halos.
 
 ```jsx
 import LightingReflection from './components/LightingReflection'
@@ -113,14 +110,14 @@ export default function App() {
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `lightColor` | `string` | `"#00ffff"` | Hex color string for PointLight and halo emission |
-| `metalness` | `number` | `1.0` | Material metalness of the central sphere mesh |
-| `roughness` | `number` | `0.1` | Material surface roughness of the central sphere mesh |
+| `lightColor` | `string` | `"#00ffff"` | Hex color string for PointLight and fake bloom halo emissions |
+| `metalness` | `number` | `1.0` | Material metalness scale of the central sphere mesh `[0.0 - 1.0]` |
+| `roughness` | `number` | `0.1` | Surface roughness of the central sphere mesh `[0.0 - 1.0]` |
 
 ---
 
 ### 4. BarChart3D
-An interactive 3D extruded bar chart container with responsive mouse hover tilt logic.
+An interactive 3D extruded bar chart container with responsive mouse hover tilt logic, built entirely using pure CSS transforms and staggered height-growth keyframes.
 
 ```jsx
 import BarChart3D from './components/BarChart3D'
@@ -137,12 +134,12 @@ export default function App() {
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `data` | `Array` | *Required* | Array of bar shapes `{ label: string, value: number, color: string }` |
+| `data` | `Array` | *Required* | Array of bar shapes: `{ label: string, value: number, color: string }` |
 
 ---
 
 ### 5. TunnelScroll
-Scroll-driven camera flight through 40 neon wireframe torus rings with motion trail fades.
+Scroll-driven camera flight through neon wireframe torus rings with motion trail fades, mapped to a 500vh scroll container.
 
 ```jsx
 import React, { useRef } from 'react'
@@ -167,7 +164,7 @@ export default function App() {
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `ringCount` | `number` | `40` | Total number of torus rings in the tunnel |
+| `ringCount` | `number` | `40` | Total number of torus rings along the tunnel path |
 | `colorA` | `string` | `"#00ffff"` | Hex starting color for ring gradients |
 | `colorB` | `string` | `"#ff00ff"` | Hex ending color for ring gradients |
 | `trailOpacity` | `number` | `0.15` | Alpha overlay transparency for rendering motion trail |
