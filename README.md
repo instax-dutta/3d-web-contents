@@ -20,11 +20,14 @@ curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/i
 Or target a specific component immediately:
 
 ```bash
-# Available: CSS3DCard, ParticleField, MorphingBlob, WarpSpeed, GeometryRepel, LightingReflection, BarChart3D, TunnelScroll
-
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s CSS3DCard
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s ParticleField
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s MorphingBlob
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s WarpSpeed
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s GeometryRepel
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s LightingReflection
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s BarChart3D
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s TunnelScroll
 ```
 
 > [!TIP]
