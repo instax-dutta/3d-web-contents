@@ -1,6 +1,6 @@
 # three-react-ui
 
-> Drop-in React components for Three.js 3D web experiences — copy-paste templates with zero package maintenance debt.
+> Zero-dep drop-in 3D components for React + Three.js — 8 copy-paste templates. Own the source, skip the npm bloat.
 
 [![React Version](https://img.shields.io/badge/react-18%2B-blue?style=flat-square)](https://react.dev)
 [![Three.js Version](https://img.shields.io/badge/three.js-0.128.0-black?style=flat-square)](https://threejs.org)
@@ -20,17 +20,11 @@ curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/i
 Or target a specific component immediately:
 
 ```bash
-# Fetch CSS3DCard directly
+# Available: CSS3DCard, ParticleField, MorphingBlob, WarpSpeed, GeometryRepel, LightingReflection, BarChart3D, TunnelScroll
+
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s CSS3DCard
-
-# Fetch ParticleField directly
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s ParticleField
-
-# Fetch MorphingBlob directly
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s MorphingBlob
-
-# Fetch WarpSpeed directly
-curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s WarpSpeed
 ```
 
 > [!TIP]
