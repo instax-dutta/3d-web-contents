@@ -1,0 +1,152 @@
+/* src/components/BarChart3D/BarChart3D.css */
+.barchart3d-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a;
+  overflow: hidden;
+}
+.barchart3d-section-label {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+}
+.barchart3d-container-wrapper {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.barchart3d-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 250px;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(20deg + var(--tilt-x, 0deg))) rotateY(calc(-20deg + var(--tilt-y, 0deg)));
+  transition: transform 0.1s ease-out;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+.barchart3d-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  transform: translateZ(-40px);
+  pointer-events: none;
+}
+.barchart3d-bar {
+  position: relative;
+  width: 45px;
+  height: var(--height);
+  transform-style: preserve-3d;
+  animation: barchart3d-grow 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: var(--delay);
+  opacity: 0;
+  transform: translateZ(0px);
+}
+@keyframes barchart3d-grow {
+  from { height: 0px; opacity: 0; }
+  to { height: var(--height); opacity: 1; }
+}
+.barchart3d-face {
+  position: absolute;
+  box-sizing: border-box;
+}
+.barchart3d-front {
+  width: 45px;
+  height: 100%;
+  bottom: 0;
+  transform: translateZ(22.5px);
+  background: linear-gradient(to top, var(--color-glow), rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--color);
+}
+.barchart3d-back {
+  width: 45px;
+  height: 100%;
+  bottom: 0;
+  transform: rotateY(180deg) translateZ(22.5px);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.barchart3d-left {
+  width: 45px;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(22.5px);
+  background: linear-gradient(to top, var(--color-glow-dark), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--color-glow);
+}
+.barchart3d-right {
+  width: 45px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  transform: rotateY(90deg) translateZ(22.5px);
+  background: linear-gradient(to top, var(--color-glow-dark), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--color-glow);
+}
+.barchart3d-top {
+  width: 45px;
+  height: 45px;
+  top: 0;
+  transform: rotateX(90deg) translateZ(22.5px);
+  background: var(--color);
+  box-shadow: 0 0 20px var(--color);
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.barchart3d-label {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  transform: translateZ(10px);
+}
+.barchart3d-val-top {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000;
+}
+.barchart3d-val-front {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: monospace;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
+  transform: translateZ(1px);
+}
