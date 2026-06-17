@@ -51,22 +51,13 @@ export default function Showcase() {
       />
 
       {/* Section 6: ParticleField */}
-      <section className="showcase-section">
-        <div className="showcase-label">Section 6 — Particle Field + Mouse Interaction</div>
-        <ParticleField count={3000} color="#00ffff" size={0.8} mouseRadius={100} speed={0.3} />
-      </section>
+      <ParticleField count={3000} color="#00ffff" size={0.8} mouseRadius={100} speed={0.3} />
 
       {/* Section 7: MorphingBlob */}
-      <section className="showcase-section">
-        <div className="showcase-label">Section 7 — Morphing Blob + Sine Waves</div>
-        <MorphingBlob color="#ff00ff" speed={1.0} intensity={0.4} wireframe={false} pulseOnHover={true} />
-      </section>
+      <MorphingBlob color="#ff00ff" speed={1.0} intensity={0.4} wireframe={false} pulseOnHover={true} />
 
       {/* Section 8: WarpSpeed */}
-      <section className="showcase-section">
-        <div className="showcase-label">Section 8 — Warp Speed Starfield</div>
-        <WarpSpeed count={2000} color="#ffffff" speed={1.0} scrollDriven={false} maxStreak={3.0} />
-      </section>
+      <WarpSpeed count={2000} color="#ffffff" speed={1.0} scrollDriven={false} maxStreak={3.0} />
     </div>
   );
 }

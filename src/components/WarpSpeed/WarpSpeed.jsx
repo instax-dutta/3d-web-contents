@@ -107,7 +107,10 @@ export default function WarpSpeed({
     if (scrollDriven) {
       const scrollDelta = scrollDeltaRef.current;
       scrollDeltaRef.current = 0;
-      const targetSpeedMult = Math.max(0.1, Math.min(3.0, Math.abs(scrollDelta) * 0.05));
+      const scrollMagnitude = Math.abs(scrollDelta) * 0.05;
+      const targetSpeedMult = scrollMagnitude > 0.01
+        ? Math.min(3.0, scrollMagnitude)
+        : 1.0;
       currentSpeedMultiplierRef.current += (targetSpeedMult - currentSpeedMultiplierRef.current) * 0.1;
       speedMultiplier = currentSpeedMultiplierRef.current;
     } else {
