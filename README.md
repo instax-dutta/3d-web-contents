@@ -22,6 +22,15 @@ Or target a specific component immediately:
 ```bash
 # Fetch CSS3DCard directly
 curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s CSS3DCard
+
+# Fetch ParticleField directly
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s ParticleField
+
+# Fetch MorphingBlob directly
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s MorphingBlob
+
+# Fetch WarpSpeed directly
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s WarpSpeed
 ```
 
 > [!TIP]
@@ -169,6 +178,93 @@ export default function App() {
 | `colorB` | `string` | `"#ff00ff"` | Hex ending color for ring gradients |
 | `trailOpacity` | `number` | `0.15` | Alpha overlay transparency for rendering motion trail |
 | `scrollContainer` | `RefObject` | `null` | Scrollable parent element ref (defaults to window) |
+
+---
+
+### 6. ParticleField
+Fullscreen particle system where 3000+ particles float in 3D space and dynamically repel from mouse position, drifting back to home positions on mouse leave.
+
+```jsx
+import ParticleField from './components/ParticleField'
+
+export default function App() {
+  return (
+    <ParticleField
+      count={3000}
+      color="#00ffff"
+      size={0.8}
+      mouseRadius={100}
+      speed={0.3}
+    />
+  )
+}
+```
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `count` | `number` | `3000` | Total particle count |
+| `color` | `string` | `"#00ffff"` | Hex color of particles |
+| `size` | `number` | `0.8` | Point size in world units |
+| `mouseRadius` | `number` | `100` | World unit radius of mouse influence |
+| `speed` | `number` | `0.3` | Base drift speed multiplier |
+
+---
+
+### 7. MorphingBlob
+High-poly sphere with vertices displaced by layered sine waves creating an organic pulsing blob. Intensity spikes on hover.
+
+```jsx
+import MorphingBlob from './components/MorphingBlob'
+
+export default function App() {
+  return (
+    <MorphingBlob
+      color="#ff00ff"
+      speed={1.0}
+      intensity={0.4}
+      wireframe={false}
+      pulseOnHover={true}
+    />
+  )
+}
+```
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `color` | `string` | `"#ff00ff"` | Hex color of blob surface |
+| `speed` | `number` | `1.0` | Animation speed multiplier |
+| `intensity` | `number` | `0.4` | Max vertex displacement amount |
+| `wireframe` | `boolean` | `false` | Render as wireframe |
+| `pulseOnHover` | `boolean` | `true` | Spike intensity on mouse enter |
+
+---
+
+### 8. WarpSpeed
+Starfield where stars streak past the camera in a hyperspace warp effect. Speed is constant or scroll-driven.
+
+```jsx
+import WarpSpeed from './components/WarpSpeed'
+
+export default function App() {
+  return (
+    <WarpSpeed
+      count={2000}
+      color="#ffffff"
+      speed={1.0}
+      scrollDriven={false}
+      maxStreak={3.0}
+    />
+  )
+}
+```
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `count` | `number` | `2000` | Total star count |
+| `color` | `string` | `"#ffffff"` | Hex color of stars and streaks |
+| `speed` | `number` | `1.0` | Base warp speed |
+| `scrollDriven` | `boolean` | `false` | Map speed to scroll velocity |
+| `maxStreak` | `number` | `3.0` | Max streak length at full speed |
 
 ---
 

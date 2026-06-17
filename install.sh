@@ -2,7 +2,7 @@
 
 # REPO URL setup
 REPO_RAW="https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main"
-COMPONENTS=("CSS3DCard" "GeometryRepel" "LightingReflection" "BarChart3D" "TunnelScroll")
+COMPONENTS=("CSS3DCard" "GeometryRepel" "LightingReflection" "BarChart3D" "TunnelScroll" "ParticleField" "MorphingBlob" "WarpSpeed")
 
 # Function to check if item is in array
 contains_element() {
@@ -32,10 +32,13 @@ else
   echo "3) LightingReflection"
   echo "4) BarChart3D"
   echo "5) TunnelScroll"
+  echo "6) ParticleField"
+  echo "7) MorphingBlob"
+  echo "8) WarpSpeed"
   echo ""
   
   # Read choice from /dev/tty to support curl piping
-  read -p "Select a component [1-5]: " CHOICE < /dev/tty
+  read -p "Select a component [1-8]: " CHOICE < /dev/tty
   
   case "$CHOICE" in
     1) COMPONENT="CSS3DCard" ;;
@@ -43,6 +46,9 @@ else
     3) COMPONENT="LightingReflection" ;;
     4) COMPONENT="BarChart3D" ;;
     5) COMPONENT="TunnelScroll" ;;
+    6) COMPONENT="ParticleField" ;;
+    7) COMPONENT="MorphingBlob" ;;
+    8) COMPONENT="WarpSpeed" ;;
     *)
       echo "Error: Invalid choice."
       exit 1
@@ -135,6 +141,30 @@ case "$COMPONENT" in
   colorB: string (hex, default \"#ff00ff\")
   trailOpacity: number (default 0.15)
   scrollContainer: RefObject<HTMLElement> (optional, defaults to window)"
+    ;;
+  "ParticleField")
+    PROPS_BLOCK="ParticleField:
+  count: number (default 3000)
+  color: string (hex, default \"#00ffff\")
+  size: number (default 0.8)
+  mouseRadius: number (default 100)
+  speed: number (default 0.3)"
+    ;;
+  "MorphingBlob")
+    PROPS_BLOCK="MorphingBlob:
+  color: string (hex, default \"#ff00ff\")
+  speed: number (default 1.0)
+  intensity: number (default 0.4)
+  wireframe: boolean (default false)
+  pulseOnHover: boolean (default true)"
+    ;;
+  "WarpSpeed")
+    PROPS_BLOCK="WarpSpeed:
+  count: number (default 2000)
+  color: string (hex, default \"#ffffff\")
+  speed: number (default 1.0)
+  scrollDriven: boolean (default false)
+  maxStreak: number (default 3.0)"
     ;;
 esac
 
