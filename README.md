@@ -14,14 +14,14 @@ Fetch components directly into your codebase on demand. Run the picker script:
 
 ```bash
 # Run interactive picker
-curl -fsSL https://raw.githubusercontent.com/saiduttaabhishekdash/three-react-ui/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash
 ```
 
 Or target a specific component directly:
 
 ```bash
 # Fetch CSS3DCard immediately
-curl -fsSL https://raw.githubusercontent.com/saiduttaabhishekdash/three-react-ui/main/install.sh | bash -s CSS3DCard
+curl -fsSL https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main/install.sh | bash -s CSS3DCard
 ```
 
 > [!TIP]
@@ -199,8 +199,8 @@ To run the interactive showcase layout locally:
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/saiduttaabhishekdash/three-react-ui.git
-cd three-react-ui
+git clone https://github.com/instax-dutta/3d-web-contents.git
+cd 3d-web-contents
 
 # 2. Install dependencies
 npm install

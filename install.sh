@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # REPO URL setup
-REPO_RAW="https://raw.githubusercontent.com/saiduttaabhishekdash/three-react-ui/main"
+REPO_RAW="https://raw.githubusercontent.com/instax-dutta/3d-web-contents/main"
 COMPONENTS=("CSS3DCard" "GeometryRepel" "LightingReflection" "BarChart3D" "TunnelScroll")
 
 # Function to check if item is in array
